@@ -7,6 +7,13 @@ EP_DST_PATH="/~/"
 TRANSFER_TOKEN="$(globus config show transfer_token)"
 AUTH_TOKEN="$(globus config show auth_token)"
 
+#Sync Level for tasks
+#Supported values are exists|mtime|checksum
+#Still exploring issues with this option
+#Recommend experimental use only at this time
+#SYNC_LEVEL="--sync-level checksum"
+SYNC_LEVEL=
+
 if [ "$TRANSFER_TOKEN" = "transfer_token not set" -o "$AUTH_TOKEN" = "auth_token not set" ]
 then
  echo "Globus CLI not properly configured."
@@ -28,7 +35,7 @@ function submit_transfer() {
  local dst_ep="$4"
  local dst_path="$5"
  local __result_var="$6"
- local result=$(globus transfer async-transfer --format json --submission-id $sub_id --source-endpoint $src_ep --source-path $src_path --dest-endpoint $dst_ep --dest-path $dst_path --recursive --sync-level checksum)
+ local result=$(globus transfer async-transfer --format json --submission-id $sub_id --source-endpoint $src_ep --source-path $src_path --dest-endpoint $dst_ep --dest-path $dst_path --recursive $SYNC_LEVEL)
  eval $__result_var="'$result'"
 }
 
