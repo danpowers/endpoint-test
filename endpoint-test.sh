@@ -4,15 +4,15 @@ EP_SRC_PATH="/~/"
 EP_DST_NAME="go#ep2"
 EP_DST_PATH="/~/"
 
-TRANSFER_TOKEN="$(globus config show transfer_token)"
-AUTH_TOKEN="$(globus config show auth_token)"
-
 #Sync Level for tasks
 #Supported values are exists|mtime|checksum
 #Still exploring issues with this option
 #Recommend experimental use only at this time
 #SYNC_LEVEL="--sync-level checksum"
 SYNC_LEVEL=
+
+TRANSFER_TOKEN="$(globus config show transfer_token)"
+AUTH_TOKEN="$(globus config show auth_token)"
 
 if [ "$TRANSFER_TOKEN" = "transfer_token not set" -o "$AUTH_TOKEN" = "auth_token not set" ]
 then
