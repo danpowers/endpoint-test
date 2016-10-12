@@ -10,9 +10,9 @@ EP_DST_NAME="go#ep2"
 EP_DST_PATH="/~/"
 
 #Sync Level for tasks
-#Supported values are exists|mtime|checksum
-#Still exploring issues with this option
-#Recommend experimental use only at this time
+#Supported values are exists|mtime|checksum.
+#Still exploring issues with this option.
+#Recommend experimental use only at this time.
 #SYNC_LEVEL="--sync-level checksum"
 SYNC_LEVEL=
 
