@@ -1,4 +1,9 @@
 #!/bin/bash
+
+#Specify the source and destination endpoints, as well as the 
+#source and destination paths. The script will attempt to 
+#transfer the contents of the source path on the source endpoint
+#to the destination path on the destination endpoint.
 EP_SRC_NAME="go#ep1"
 EP_SRC_PATH="/~/"
 EP_DST_NAME="go#ep2"
