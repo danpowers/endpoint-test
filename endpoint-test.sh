@@ -1,7 +1,7 @@
 #!/bin/bash
 EP_SRC_NAME="go#ep1"
 EP_SRC_PATH="/~/"
-EP_DST_NAME="danielpowers#prod01"
+EP_DST_NAME="go#ep2"
 EP_DST_PATH="/~/"
 
 TRANSFER_TOKEN="$(globus config show transfer_token)"
